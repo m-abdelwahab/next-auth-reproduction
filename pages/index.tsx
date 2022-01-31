@@ -1,10 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { signIn, signOut, useSession } from 'next-auth/client';
 
 const Home: NextPage = () => {
-  const [session, loading] = useSession();
-
   return (
     <div>
       <Head>
@@ -16,12 +13,6 @@ const Home: NextPage = () => {
       <h1 className="text-6xl">Next.js Enterprise</h1>
       <p>This project is powered by `next-auth`, prisma and WorkOS</p>
 
-      {session && (
-        <>
-          Signed in as {session.user.email} <br />
-          <button onClick={() => signOut()}>Sign out</button>
-        </>
-      )}
       {/* add steps here + include video */}
     </div>
   );

@@ -1,9 +1,9 @@
 import NextAuth from 'next-auth';
-import Providers from 'next-auth/providers'
+import WorkOSProvider from 'next-auth/providers/workos'
 
 export default NextAuth({
   providers: [
-    Providers.WorkOS({
+    WorkOSProvider({
       clientId: process.env.WORKOS_CLIENT_ID,
       clientSecret: process.env.WORKOS_API_KEY,
     }),

@@ -1,14 +1,14 @@
 import 'styles/index.css';
 import type { AppProps } from 'next/app';
-import { Provider } from 'next-auth/client';
+import { SessionProvider } from 'next-auth/react';
 
 export default function App({
   Component,
   pageProps: { session, ...pageProps },
 }: AppProps) {
   return (
-    <Provider session={session}>
+    <SessionProvider session={session}>
       <Component {...pageProps} />
-    </Provider>
+    </SessionProvider>
   );
 }

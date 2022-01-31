@@ -2,7 +2,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Head from 'next/head';
-import { signIn, signOut, useSession } from 'next-auth/client';
+import { signIn, signOut, useSession } from 'next-auth/react';
 
 const Login = () => {
   const {
@@ -10,7 +10,9 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const [session, loading] = useSession();
+
+  const { data: session } = useSession();
+
   const onSubmit = async ({ team }) => {
     // TODO: send a request to the get-organization endpoint and return the organizationId from your database
     // handle errors here
