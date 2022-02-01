@@ -16,7 +16,7 @@ const Login = () => {
   const onSubmit = async ({ team }) => {
     // TODO: send a request to the get-organization endpoint and return the organizationId from your database
     // handle errors here
-    const organization = 'org_01FSZABW05AHJ7G75WJR1R13J7';
+    const organization = 'org_01FNNDG6P2VHRPXPP5Y438RB2E';
     signIn('workos', undefined, {
       organization,
     });
